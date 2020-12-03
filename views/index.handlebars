@@ -1,0 +1,95 @@
+<div class="container">
+    <img class="burgerpic" src="/assets/hamburger.png" alt="another burger pic">
+<div class="jumbotron">
+    <h1 class="title">Eat Them Burgers</h1>
+    
+    <button type="button" class="btn btn-success button1">Eat the Burger</button>
+    <button type="button" class="btn btn-danger button2">Create a New Burger</button>
+    
+    
+</div>
+<div class="card-group">
+  <div class="card">
+    
+    <div class="card-body">
+      <h5 class="card-title">Burgers to Eat</h5>
+    <ul> 
+      {{#each burger}}
+    {{#dataValues}}
+    {{#unless devoured}}
+        <li>{{burger_name}}</li>
+       {{/unless}} 
+    {{/dataValues}}
+{{/each}}
+    
+  
+
+    </ul>           
+    </div>
+  </div>
+ 
+  <div class="card">
+    
+    <div class="card-body">
+      <h5 class="card-title">Eaten Burgers</h5>
+      {{#each burger}}
+    {{#dataValues}}
+    {{#if devoured}}
+        <li>{{burger_name}}</li>
+       {{/if}} 
+    {{/dataValues}}
+{{/each}}
+    </div>
+  </div>
+</div>
+
+<div class="modal eatburger" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Pick a Burger!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="list-group">
+  {{#each burger}}
+    {{#dataValues}}
+    {{#unless devoured}}
+        <button type="button" class="list-group-item list-group-item-action">{{burger_name}}</button>
+
+       {{/unless}} 
+    {{/dataValues}}
+{{/each}}
+  
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning">EAT IT</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal createburger" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create New Burger</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input class="form-control burgerinput" type="text" placeholder="Name of Burger">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" data-dismiss="modal" class="btn btn-warning nameit">Name it!</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
