@@ -4,8 +4,30 @@ const Burger = require('../models/burger.js');
 module.exports = function(app) {
 
     app.get("/", function(req, res) {
-       res.render("index");
+        Burger.findAll({}).then(function(results){
+            
+            console.log(results)
+            res.render("index",{
+                burger: results
+            });
+        })
+       
+      
+       
        });
+
+       app.put('/api/update', function(req, res){
+         Burger.update({ devoured: "true" }, {
+            where: {
+            id: req.body.id,
+              devoured: false
+            }
+          }).then(function(results){
+              res.json(results)
+          });
+    });
+
+
        
     app.get('/api/notdevoured', function(req, res){
         Burger.findAll({where: {devoured: false}}).then(function(results){

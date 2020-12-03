@@ -1,6 +1,7 @@
 $( document ).ready(function() {
     $.get("/api/notdevoured", function(data){
-        console.log(data)
+       console.log(data)
+        
     })
 
 
@@ -23,11 +24,29 @@ $( document ).ready(function() {
           devoured: false
       }, function(data){
           console.log(data)
+          console.log($('.burgerinput').val())
           location.reload()
-      } )
+      })
       
     })
 
+    $('.chooseburger').attr('id', function(i) {
+        return 'choose'+(i+1);
+     });
+
+$('button[id^="choose"]').on('click', function (){
+  
+    $.ajax("/api/update", {
+        type: "PUT",
+        data: {id: $(this).attr("data-id")}
+      }).then(
+        function(data) {
+          console.log(data);
+          
+          
+        }
+      );
+})
 
  
 });

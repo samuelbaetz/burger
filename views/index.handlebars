@@ -57,18 +57,14 @@
   {{#each burger}}
     {{#dataValues}}
     {{#unless devoured}}
-        <button type="button" class="list-group-item list-group-item-action">{{burger_name}}</button>
-
+{{> burger/part }}
        {{/unless}} 
     {{/dataValues}}
 {{/each}}
   
 </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-warning">EAT IT</button>
-      </div>
+      
     </div>
   </div>
 </div>
