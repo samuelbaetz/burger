@@ -42,7 +42,7 @@ $('button[id^="choose"]').on('click', function (){
       }).then(
         function(data) {
           console.log(data);
-          
+          location.reload()
           
         }
       );

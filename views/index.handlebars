@@ -32,6 +32,7 @@
     
     <div class="card-body">
       <h5 class="card-title">Eaten Burgers</h5>
+      <ul>
       {{#each burger}}
     {{#dataValues}}
     {{#if devoured}}
@@ -39,6 +40,7 @@
        {{/if}} 
     {{/dataValues}}
 {{/each}}
+</ul>
     </div>
   </div>
 </div>
@@ -47,7 +49,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Pick a Burger!</h5>
+        <h5 class="modal-title">Pick a Burger 🍔</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -73,7 +75,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Create New Burger</h5>
+        <h5 class="modal-title">Create New Burger🍔</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
